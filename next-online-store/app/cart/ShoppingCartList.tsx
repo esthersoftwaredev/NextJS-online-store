@@ -9,7 +9,21 @@ export default function ShoppingCartList({
 }: {
 	initialCartProducts: Product[];
 }) {
-	const [cartProducts] = useState(initialCartProducts);
+	const [cartProducts, setCartProducts] = useState(initialCartProducts);
+
+  async function removeFromCart(productId: string) {
+    const localUrl = "http://localhost:3000";
+
+    const response = await fetch(`${localUrl}/api/users/2/cart`, {
+      method: "DELETE",
+      body: JSON.stringify({ productId }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const updatedCartProducts = await response.json();
+    setCartProducts(updatedCartProducts);
+  }
 
 	return (
 		<div className='w-full bg-gray-100 dark:bg-slate-800 min-h-[87vh] mx-auto p-16'>
@@ -26,6 +40,15 @@ export default function ShoppingCartList({
 						<Link href={`/products/${product.id}`}>
 							<h3 className='text-xl font-semibold mb-2'>{product.name}</h3>
 							<p className='text-gray-600'>${product.price}</p>
+              <div className="flex justify-end">
+                <button
+                  className="bg-sky-400 hover:bg-sky-600 dark:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold py-2 px-4 rounded"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    removeFromCart(product.id);
+                  }}> Remove from Cart
+                </button>
+              </div>
 						</Link>
 					</li>
 				))}
