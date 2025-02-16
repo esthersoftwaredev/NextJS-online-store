@@ -71,6 +71,7 @@ export default function ProductsList({
           {productIsInCart(product.id) 
           ? (
             <button
+              className="bg-sky-400 hover:bg-sky-600 dark:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold py-2 px-4 rounded w-full mt-2"
               onClick={(e) => {
                 e.preventDefault();
                 removeFromCart(product.id);
@@ -78,6 +79,7 @@ export default function ProductsList({
             </button>
           ) : (
             <button
+              className="bg-sky-500 hover:bg-sky-700 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold py-2 px-4 rounded w-full mt-2"           
               onClick={(e) => {
                 e.preventDefault();
                 addToCart(product.id);

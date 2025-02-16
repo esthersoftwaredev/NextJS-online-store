@@ -10,8 +10,6 @@ export default async function ProductsPage() {
   });
   const cartProducts = await secondRes.json();
 
-
-
   return (
     <div className="min-h-[82vh] flex flex-col bg-gray-100 dark:bg-slate-800">
       <div className="w-full h-full p-16 overflow-y-auto">
