@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { products } from '../product-data';
+import Link from 'next/link';
 
 export default function CartPage() {
   const [cartIds] = useState<string[]>(['123', '345']);
@@ -12,10 +13,11 @@ export default function CartPage() {
 		<>
 			<h1>Shopping Cart</h1>
       {cartProducts.map((product) => (
-        <div key={product.id}>
+        // not using <a></a> tags inside the Link element (like th AI suggests), since Link el replaces <a></a> tags
+        <Link key={product.id} href={`/products/${product.id}`}>
           <h3>{product.name}</h3>
           <p>${product.price}</p>
-        </div>
+        </Link>
       ))}
 		</>
 	);
