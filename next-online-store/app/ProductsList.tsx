@@ -13,7 +13,7 @@ export default function ProductsList({ products }: { products: Product[] }) {
         >
           <div className="flex justify-center mb-4 h-48 relative"> {/* Added height and relative positioning */}
             <Image
-              src={'/' + product.imageUrl}
+              src={product.imageUrl}
               alt="Product image"
               fill // Fill the container
               className="object-cover rounded-md" // Cover the container, maintaining aspect ratio
