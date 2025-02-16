@@ -9,7 +9,7 @@ export default function ProductsList({ products }: { products: Product[] }) {
         <Link
           key={product.id}
           href={`/products/${product.id}`}
-          className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300"
+          className="bg-white dark:bg-slate-900 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300"
         >
           <div className="flex justify-center mb-4 h-48 relative"> {/* Added height and relative positioning */}
             <Image
@@ -19,7 +19,7 @@ export default function ProductsList({ products }: { products: Product[] }) {
               className="object-cover rounded-md" // Cover the container, maintaining aspect ratio
             />
           </div>
-          <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+          <h2 className="dark:text-slate-500 text-xl font-semibold mb-2">{product.name}</h2>
           <p className="text-gray-600">${product.price}</p>
         </Link>
       ))}
