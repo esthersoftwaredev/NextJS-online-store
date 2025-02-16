@@ -23,5 +23,5 @@ export async function connectToDB() {
 	cachedClient = client;
 	cachedDb = client.db('next-online-store');
 
-	return { client, db: client.db() };
+	return { client, db: client.db('next-online-store') };
 }
