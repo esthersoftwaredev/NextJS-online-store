@@ -10,10 +10,10 @@ export default function ProductDetailsPage({params} : {params: {id: string}}) {
 
   return (
 		<>
-			<h1>{product!.name}</h1>
-      <p>${product!.price}</p>
+			<h1>{product.name}</h1>
+      <p>${product.price}</p>
       <h3>Description</h3>
-			<p>{product!.description}</p>
+			<p>{product.description}</p>
 		</>
 	);
 }
