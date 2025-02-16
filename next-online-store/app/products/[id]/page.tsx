@@ -9,7 +9,7 @@ export default function ProductDetailsPage({params} : {params: {id: string}}) {
   }
 
   return (
-		<div className="container min-h-[81vh] mx=auto p-16 flex flex-col md:flex-row">
+		<div className="w-full bg-gray-100 dark:bg-slate-800 min-h-[87vh] mx=auto p-16 flex flex-col md:flex-row">
 			<div className="md:w-1/2 mb-4 md:mb-0 md:mr-8">
 				<img 
           className="w-full h-auto rounded-lg shadow-md"
