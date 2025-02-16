@@ -5,7 +5,9 @@ export default async function ProductsPage() {
   const response = await fetch(`${localUrl}/api/products`);
   const products = await response.json();
 
-  const secondRes = await fetch(`${localUrl}/api/users/2/cart`);
+  const secondRes = await fetch(`${localUrl}/api/users/2/cart`, {
+    cache: 'no-cache',
+  });
   const cartProducts = await secondRes.json();
 
 
