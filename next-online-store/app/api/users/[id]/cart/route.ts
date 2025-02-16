@@ -65,3 +65,23 @@ export async function POST(
 		},
 	});
 }
+
+export async function DELETE(	
+	request: NextRequest,
+	{ params }: { params: Params }
+) {
+	const userId = params.id;
+	const body: CartBody = await request.json();
+	const productId = body.productId;
+
+	carts[userId] = carts[userId] ? carts[userId].filter((id) => id !== productId) : [];
+	const cartProducts = carts[userId].map((id) => products.find((product) => product.id === id)!);
+
+
+	return new Response(JSON.stringify(cartProducts), {
+		status: 202,
+		headers: {
+			"Content-Type": "application/json",
+		},
+	});
+}
