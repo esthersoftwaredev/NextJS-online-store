@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { products } from '../../product-data';
+import { products } from '@/app/product-data';
 import Link from 'next/link';
 
 export default function CartPage() {
