@@ -1,3 +1,6 @@
-export default function ProductDetailsPage() {
-  return <h1>Product Details</h1>;
+import { products } from "@/app/product-data";
+
+export default function ProductDetailsPage({params} : {params: {id: string}}) {
+  const product = products.find((product) => product.id === params.id);
+  return <h1>{product!.name}</h1>;
 }
