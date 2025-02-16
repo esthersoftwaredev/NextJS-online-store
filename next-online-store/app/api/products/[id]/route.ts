@@ -2,14 +2,14 @@ import { NextRequest } from "next/server";
 import { products } from "@/app/product-data";
 
 type Params = {
-	id: string;
+	productId: string;
 };
 
 export async function GET(
 	request: NextRequest,
 	{ params }: { params: Params }
 ) {
-	const productId = params.id;
+	const productId = params.productId;
 
 	const product = products.find((product) => product.id === productId);
 
