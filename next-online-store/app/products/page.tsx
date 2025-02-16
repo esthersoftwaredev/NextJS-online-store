@@ -1,7 +1,11 @@
 import ProductsList from "../ProductsList";
-import { products } from "../product-data";
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const localUrl = 'http://localhost:3000';
+
+  const response = await fetch(`${localUrl}/api/products`);
+  const products = await response.json();
+
   return (
     <div className="min-h-[82vh] flex flex-col bg-gray-100 dark:bg-slate-800">
       <div className="w-full h-full p-16 overflow-y-auto">
