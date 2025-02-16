@@ -10,7 +10,7 @@ export default function CartPage() {
   const cartProducts = cartIds.map((id) => products.find((product) => product.id === id)!);
 
   return (
-    <div className="container mx-auto p-8">
+    <div className="container min-h-[80vh] mx-auto p-16">
     <h1 className="text-4xl font-bold mb-8">Shopping Cart</h1>
 
     <ul className="space-y-4"> {/* List for cart items */}
