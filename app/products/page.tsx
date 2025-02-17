@@ -1,11 +1,10 @@
 import ProductsList from "../ProductsList";
 
 export default async function ProductsPage() {
-  const localUrl = 'http://localhost:3000';
-  const response = await fetch(`${localUrl}/api/products`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/products`);
   const products = await response.json();
 
-  const secondRes = await fetch(`${localUrl}/api/users/2/cart`, {
+  const secondRes = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/users/2/cart`, {
     cache: 'no-cache',
   });
   const cartProducts = await secondRes.json();

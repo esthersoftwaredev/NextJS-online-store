@@ -2,9 +2,7 @@ import NotFoundPage from "@/app/not-found";
 import Image from "next/image";
 
 export default async function ProductDetailsPage({params} : {params: {id: string}}) {
-	const localUrl = 'http://localhost:3000';
-
-  const response = await fetch(`${localUrl}/api/products/${params.id}`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/products/${params.id}`);
 	const product = await response.json();
 
   if (!product) {

@@ -52,7 +52,7 @@ export async function POST(
 
 	const updatedCart = await db.collection("carts").findOneAndUpdate(
 		{ userId },
-		{ $push: { cartIds: { $each: [productId] } } },
+		{ $push: { cartIds: productId } },
 		{ upsert: true, returnDocument: "after" }
 	);
 
@@ -78,7 +78,7 @@ export async function DELETE(
 
 	const updatedCart = await db.collection("carts").findOneAndUpdate(
 		{ userId },
-		{ $pull: { cartIds: { $each: [productId] } } },
+		{ $pull: { cartIds: productId } },
 		{ returnDocument: "after" }
 	);
 

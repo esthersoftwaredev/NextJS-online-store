@@ -1,8 +1,7 @@
 import ShoppingCartList from "./ShoppingCartList";
 
 export default async function CartPage() {
-  const localUrl = 'http://localhost:3000';
-  const response = await fetch(`${localUrl}/api/users/2/cart`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/users/2/cart`, {
     cache: 'no-cache',
   });
   const cartProducts = await response.json();
