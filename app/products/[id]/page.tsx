@@ -1,4 +1,5 @@
 import NotFoundPage from "@/app/not-found";
+import Image from "next/image";
 
 export default async function ProductDetailsPage({params} : {params: {id: string}}) {
 	const localUrl = 'http://localhost:3000';
@@ -13,10 +14,12 @@ export default async function ProductDetailsPage({params} : {params: {id: string
   return (
 		<div className="w-full bg-gray-100 dark:bg-slate-800 min-h-[87vh] mx=auto p-16 flex flex-col md:flex-row">
 			<div className="md:w-1/2 mb-4 md:mb-0 md:mr-8">
-				<img 
+				<Image
           className="w-full h-auto rounded-lg shadow-md"
           src={product.imageUrl} 
           alt={product.name} 
+					width={500}
+					height={500}
         />
 			</div>
 			<div className="md:w-1/2">

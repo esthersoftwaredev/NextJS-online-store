@@ -1,14 +1,5 @@
 import { NextRequest } from "next/server";
-import { products } from "@/app/product-data";
 import { connectToDB } from "@/app/api/db";
-
-type ShoppingCart = Record<string, string[]>;
-
-const carts: ShoppingCart = {
-	"1": ["123", "345"],
-	"2": ["456", "567"],
-	"3": ["789"],
-};
 
 type Params = {
 	id: string;
