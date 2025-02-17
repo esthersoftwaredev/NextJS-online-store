@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 export default function CheckoutPage() {
   return (
     <div className="w-full bg-gray-100 dark:bg-slate-800 min-h-[87vh] mx-auto p-8 flex flex-col items-center justify-center">

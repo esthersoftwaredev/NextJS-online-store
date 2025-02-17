@@ -1,6 +1,8 @@
 import NotFoundPage from "@/app/not-found";
 import Image from "next/image";
 
+export const dynamic = 'force-dynamic';
+
 export default async function ProductDetailsPage({params} : {params: {id: string}}) {
   const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/products/${params.id}`);
 	const product = await response.json();
